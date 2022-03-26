@@ -1,0 +1,76 @@
+
+Descrição
+
+Após economizar uma certa quantia de dinheiro, Geraldo decidiu fazer uma viagem. Inicialmente, 
+Ele está em sua casa localizada em um ponto (x, y) num plano. Seus 2 destinos favoritos estão localizados 
+nos pontos (a, b) e (c, d). O meio de transporte que vai ser utilizado é o seu carro e seu desejo é gastar 
+o mínimo possível.  O custo total de viagem para algum dos destinos inclui: Pedágio e abastecer o carro 
+para ida e volta.
+
+O carro gasta 1 litro de gasolina a cada 12 km. 
+
+A distância entre a casa e os destinos é dada em quilômetros.
+
+O carro está sem gasolina e Geraldo vai precisar abastecer em um posto no início de cada viagem. 
+
+Geraldo vai abastecer a quantidade exata de litros para fazer a viagem.
+
+
+Use o tipo double para precisão.
+
+Formato de entrada
+
+A primeira linha contém o orçamento para as viagens.
+
+A segunda linha contém seis números indicando (x, y), (a, b) e (c, d) respectivamente.
+
+A terceira linha contém o custo do litro da gasolina e do pedágio para o destino 1.
+
+A quarta linha contém o custo do litro da gasolina e do pedágio para o destino 2.
+
+Formato de saída
+
+Na Primeira linha uma das frases abaixo.
+
+Se é possível ir para os dois destinos : "Ele vai visitar os dois lugares" 
+
+Se é possível ir somente para um destino e o valor é o mesmo: "Tanto faz..."
+
+Se é possível ir somente para um destino e o custo do primeiro destino é menor que o do segundo : "Ele vai para o destino 1"
+
+Se é possível ir somente para um destino e o custo do segundo destino é menor que o do primeiro : "Ele vai para o destino 2"
+
+Se não é possível ir para nenhum : "Ele vai ficar em casa" 
+
+Na segunda linha o valor total gasto com aproximação de 2 casas decimais. Se não houve viagem, -1.
+
+
+Exemplos de:
+
+Entrada
+
+
+100
+0 0 49 0 0 -49
+5.01 18
+5.02 18
+
+Saída
+
+
+Ele vai para o destino 1
+58.91
+
+Entrada
+
+
+75
+1 3 65 98 575 65
+4.50 29 
+5 12
+
+Saída
+
+
+Ele vai ficar em casa
+-1

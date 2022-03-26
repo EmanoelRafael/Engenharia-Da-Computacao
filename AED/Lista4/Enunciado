@@ -1,0 +1,66 @@
+Enunciado:
+Uma grande pandemia está acontecendo. O Ministério da Saúde (MS) precisa implementar um sistema de distribuição de recursos que visa a atender, prioritariamente, os hospitais com mais casos ativos da doença.
+
+O sistema proposto deve ser capaz de:
+
+    1. Cadastrar todos os hospitais existentes no sistema;
+    2. Cadastrar novos hospitais de campanha no sistema;
+    3. Remover um hospital do sistema;
+    4. Atualizar o número de casos de um hospital existente;
+    5. Fazer a distribuição de recursos.
+    
+Input Specification
+
+A entrada começa com uma linha com 1 inteiro N seguida de N inteiros na linha seguinte
+
+N
+C[0] C[1] ... C[N-1]
+
+onde N representa o número inicial de hospitais cadastrados e C[i] representa o número inicial de casos do hospital i. Os hospitais são identificados sequencialmente por inteiros 0..N-1.
+
+Seguem-se vários eventos da forma:
+
+    NEW H C: cadastra de um um novo hospital com id H (sequencial) e C casos iniciais.
+    DEL H: remove o hospital com id H.
+    IN H C: incrementa o número de casos do hospital H em C unidades.
+    OUT H C: decrementa o número de casos do hospital H em C unidades.
+    PAY R: dispara uma rodada de distribuição de uma quantidade total R em recursos para os hospitais.
+
+A entrada termina com uma linha
+
+END
+
+Uma rodada de distribuição de um valor R em recursos dá-se da seguinte forma:
+
+   => O MS atribui uma unidade de recursos por vez, sempre ao hospital com maior número de casos ativos. Em caso de empate, o hospital com maior id tem maior prioridade.
+   => Cada unidade de recursos é o suficiente para atender um caso ativo. Ao recebê-la, o hospital deduz imediatamente um caso ativo do seu total.
+   => A rodada de distribuição acaba após todas as R unidades serem atribuídas ou caso não haja mais nenhum hospital com casos ativos. Neste caso, o saldo restante é devolvido ao MS e destinado a outras frentes de combate à pandemia, não sendo acumulado para a próxima rodada.
+
+Output Specification
+
+Para as operações NEW H C e DEL H deve ser impressa uma linha
+
+H0 C0
+
+em que H0 e C0 representam, respectivamente o ID e número de casos do hospital com maior prioridade ao término da operação. Caso não haja mais nenhum hospital, deve ser impressa uma linha
+
+-1 -1
+
+Para as operações IN H C e OUT H C deve ser impressa uma linha
+
+Cnew
+
+em que Cnew representa o novo número de casos do hospital H após a operação.
+
+Para a operação PAY R deve ser impressa uma linha
+
+P
+
+onde P <= R representa o total de recursos efetivamente pagos nessa rodada.
+
+Ao final, ou seja, após o END, deve ser impressa uma linha
+
+T
+
+onde T representa a soma total dos casos ativos de todos os hospitais ainda abertos juntos.
+

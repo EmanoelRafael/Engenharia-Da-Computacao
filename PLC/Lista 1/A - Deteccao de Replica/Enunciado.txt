@@ -1,0 +1,18 @@
+Problem Statement
+
+Crie a função
+
+isReplica :: String -> Int -> Char -> Bool
+
+que recebe uma string, um inteiro x e um char e verifica se essa string é exatamente a repetição do char x vezes seguidas.
+
+Por exemplo, a string "aaaaa" repete 'a' 5 vezes seguidas.
+
+Utilize a seguinte função main para chamar isReplica
+
+main = do
+    a <- getLine
+    b <- getLine
+    c <- getChar
+    let result = isReplica a (read b) c
+    print result

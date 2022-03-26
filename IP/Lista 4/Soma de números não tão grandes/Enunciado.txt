@@ -1,0 +1,32 @@
+
+Descrição
+
+Você vai receber N números especiais na entrada com a mesma quantidade de algarismos. Seu trabalho é simples: printe a soma de todos eles.
+
+Mas o que são números especiais? São números que possuem no máximo 5 algarismos diferentes de 0 e todos eles estão localizados nas 5 últimas(maiores) posições. Ex: 430120000000000.
+
+Formato de entrada
+
+Um número N que indica a quantidade de números a serem somados. 2 <= N <= 100
+
+N números especiais m. -9*10^19 <= m <= 9*10^19.
+
+
+Formato de saída
+
+A soma de todos os N números.
+
+Exemplos de:
+
+Entrada
+
+
+3
+8180800000000000000
+-3927200000000000000
+9773800000000000000
+
+Saída
+
+
+14027400000000000000

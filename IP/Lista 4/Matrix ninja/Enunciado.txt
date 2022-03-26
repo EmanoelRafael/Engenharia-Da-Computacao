@@ -1,0 +1,76 @@
+
+Descrição
+
+O ninja do fruit ninja cansou de cortar frutas e agora está cortando matrizes. O matrix ninja (como agora gosta de ser chamado) é muito metódico com os seus cortes, ele sempre corta a matriz no meio (horizontalmente ou verticalmente) inverte a parte da direita (para um corte vertical) ou a parte de baixo (para um corte horizontal) e cola de volta no outro pedaço que sobrou da matriz. O seu trabalho é desfazer a bagunça que o fruit ninja fez!
+
+
+OBS: Em caso de dúvidas quanto a entrada/saída olhe os casos de teste de exemplo
+
+Formato de entrada
+
+Uma linha com a direção do corte ('H' ou 'V') e dois inteiros com o número de linhas e colunas da matriz.
+
+Logo depois segue a matriz
+
+OBS: O número de linhas sempre será par e o número de colunas também
+
+Formato de saída
+
+A saída deve a matriz originalmente como era antes do fruit ninja a cortar.
+
+OBS: Os elementos da matriz devem ser printados sempre com dois dígitos, caso o número não tenha dois dígitos, preencha com zeros.
+
+OBS: Para printar nesse formato utilizando o printf do C use o %02d
+
+Exemplos de:
+
+Entrada
+
+
+V 2 2
+16 15 
+11 20 
+
+Saída
+
+
+16 20 
+11 15 
+
+Entrada
+
+
+H 6 4
+10 13 02 18 
+07 14 11 17 
+11 12 00 12 
+02 20 04 17 
+00 09 11 06 
+08 14 07 05 
+
+Saída
+
+
+10 13 02 18 
+07 14 11 17 
+11 12 00 12 
+17 04 20 02 
+06 11 09 00 
+05 07 14 08 
+
+Entrada
+
+
+V 4 2
+14 10 
+12 17 
+09 05 
+15 10 
+
+Saída
+
+
+14 10 
+12 05 
+09 17 
+15 10 

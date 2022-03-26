@@ -1,0 +1,65 @@
+ Descrição
+
+Lembrando-se de um Yoshi Verde que já teve e o ajudou muito em suas viagens, nosso herói resolve comprar um Yoshi na loja de dinossauros. Ele ficou maravilhado com a infinidade de especies e resolveu fazer uma pesquisa para saber qual delas possui o melhor custo benefício dentro do valor que ele pode pagar com suas moedas.
+
+
+Mário, muito animado resolveu pesquisar sobre as raças Yoshis e descobriu suas velocidades máximas. Ele tem uma ordem de preferência das cores e para escolher seu Yoshi leva em consideração sua cor, seu custo benefício (Velocidade/Preço) e se ele tem moedas suficientes para comprar.
+
+A loja informou que tem quatro tipos disponíveis: Verde,Vermelho,Roxo e Amarelo.
+
+Para organizar, resolveu fazer uma tabela com as raças em sua ordem de preferência e as suas respectivas velocidades máximas:
+
+    Verde - 80 K/h
+    Vermelho - 100 K/h
+    Roxo - 120 K/h
+    Amarelo - 80 K/h
+
+Seu trabalho é escrever um programa para calcular o Yoshi com melhor custo beneficio que Mário pode pagar e dizer qual é a melhor opção para sua viagem pensando em sua ordem de preferência.
+
+Obs : Se Mário não tiver dinheiro suficiente para comprar nenhum Yoshi a resposta deve ser  "Acho que vou a pe :(" .
+
+Formato de entrada
+
+    M
+
+        M - número natural
+        Uma linha que só contém o número de moedas que Mário possui.
+
+
+    A B C D
+
+        A B C D - números naturais
+        Consiste em uma linha com inteiros em sequência separados por espaços, que representam os preços de cada raça de Yoshi (Verde, Vermelho, Roxo e Amarelo respectivamente).
+
+O custo benefício é medido pela razão da velocidade pelo preço ( Velocidade/Preço ) 
+
+Formato de saída
+
+    S
+
+        S - String
+        S é a cor do Yoshi que Mário irá comprar para sua viagem (com a primeira letra sempre maiúscula).
+
+Exemplos de:
+
+Entrada
+
+
+50
+20 50 60 40
+
+Saída
+
+
+Verde
+
+Entrada
+
+
+100
+40 25 30 40
+
+Saída
+
+
+Vermelho

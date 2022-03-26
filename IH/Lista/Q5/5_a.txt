@@ -1,0 +1,10 @@
+R - O formato mais apropriado para a instrucao criada seria proximo do CB-format (formato 
+das instrucoes que "pulam" para um endereco quando uma condicao é satisfeita), pois ela 
+contem uma condicao e um endereco de loop a ser seguido caso a condicao seja satisfeita.
+                    _________________________________
+formato sugerido:  | opcode |    address    |   Rs   |
+onde:
+
+opcode -> codigo da instrucao
+address -> endereco do loop
+Rs -> registrador contador

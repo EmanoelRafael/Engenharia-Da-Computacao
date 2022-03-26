@@ -1,0 +1,26 @@
+Problem Statement
+
+Defina a função addEspacos:
+
+addEspacos :: Int -> String
+
+Que produz um string com uma quantidade n de espaços. Após, defina a função paraDireita utilizando a definição de addEspacos para adiciconar uma quantidade N de espaços à esquerda de um dado String, movendo o mesmo para a direita:
+
+paraDireita :: Int −> String −> String
+
+Utilize a seguinte função main para chamada de sua função paraDireita:
+
+parseInput str = let [n, s] = words str
+                 in (read n, s)
+main :: IO()
+main = interact $ uncurry paraDireita . parseInput
+
+Input
+
+Um número e uma string separados por espaço, no formato:
+
+    N S
+
+Output
+
+A saída deve ser a String S deslocada à direita por N espaços.

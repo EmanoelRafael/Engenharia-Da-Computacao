@@ -1,0 +1,158 @@
+
+Descrição
+
+Jaiminho, o Carteiro, programou um sistema que facilitava sua vida, recebendo dados de todas as pessoas que moravam na região para que ele facilmente encontrasse o endereço de todo mundo e evitasse mais a fadiga. Entretanto, enquanto finalizava o programa ao mesmo tempo que fazia as últimas entregas do dia (claro, empurrando sua bicicleta), seu notebook foi acertado por uma bola quadrada e então atropelado por um carro, destruindo todo o seu progresso. Sem pestanejar, ele liga para você, que o devia um favor, pedindo que faça o programa para que ele finalmente possa evitar a fadiga corretamente.
+
+O programa consiste de duas operações principais: inserir um morador e encontrar um morador, e uma terceira que finaliza o programa.
+
+Cada rua da cidade (5 ao todo) possui até 50 casas e 10 edifícios, cada edifício possui até 20 andares e cada andar tem até 2 apartamentos. Cada casa ou apartamento tem capacidade para 4 pessoas.
+
+A enumeração das casas, edifícios, andares e apartamentos na entrada e saída começam por 1.
+
+Formato de entrada
+
+Um inteiro 1 <= N <= 3 indicando qual operação será executada em seguida:
+
+Com N = 1:
+
+    Uma string para o nome da rua;
+
+A partir daqui, há duas possibilidades de entrada, a depender se o morador se encontra em uma casa ou prédio:
+
+    Para casas, segue-se a leitura de, em ordem:
+        O caractere 'c', indicando que o morador vai se encontrar em uma casa;
+        Um inteiro C indicando o número da casa;
+        Uma string indicando o nome do morador;
+        Um caractere S ('M' ou 'F') indicando o sexo do morador;
+        A data de nascimento do morador no formato dd/mm/aaaa.
+    Para prédios, segue-se a leitura de, em ordem:
+        Três inteiros, indicando, respectivamente, o número do edifício E, o andar A do morador e o número APT do seu apartamento;
+        Uma string indicando o nome do morador;
+        Um caractere 'M' ou 'F' indicando o sexo do morador;
+        A data de nascimento do morador no formato dd/mm/aaaa.
+
+
+Com N = 2:
+
+    Duas strings M e R, indicando, respectivamente, o nome do morador e em qual rua ele deve ser procurado.
+
+
+Cada operação é separada por uma linha em branco.
+
+Formato de saída
+
+A cada chamada da segunda operação, devem ser retornado os dados dos X moradores encontrados que se encontram nos parâmetros de busca, da seguinte maneira:
+
+    Caso algum morador tenha sido encontrado:
+        Caso ele more em uma casa:
+        "~Casa: C | Sexo: S | Nascimento: dd/mm/aaaa", seguido de uma quebra de linha.
+
+        Caso ele more em um prédio:
+        "Edificio: E | Andar: A | Numero do apt.: APT | Sexo: S | Nascimento: dd/mm/aaaa", seguido de uma quebra de linha.
+        Ao final da busca, deve ser retornado:
+        "Foram encontradas X instancias de pessoas chamadas "M" em "R", relatadas acima.", seguido de uma quebra de linha.
+        Os moradores encontrados são ordenados pelo número da casa, número do prédio, andar do prédio, número do apartamento e ordem de inserção, nessa ordem.
+    Caso nenhum morador tenha sido encontrado:
+        "Sem dados de "M" em "R!"", seguido de uma quebra de linha.
+
+Na chamada da terceira operação, a seguinte string deve ser retornada, e o programa encerrado:
+"O programa sera fechado, obrigado por fazer uso dele. Lembre-se de evitar a fadiga!"
+
+
+Caso a operação inserida não seja válida, deve-se retornar a seguinte string, e o programa volta a esperar por uma entrada:
+"Opcao invalida. Por favor, digite uma opcao valida.", seguido de uma quebra de linha.
+
+Exemplos de:
+
+Entrada
+
+
+1
+Rua A
+c 12
+Juvenal
+M 01/01/2000
+
+2
+Juvenal
+Rua B
+
+2
+Juvenal
+Rua C
+
+2
+Juvenal
+Rua D
+
+2
+Juvenal
+Rua E
+
+3
+
+Saída
+
+
+Sem dados de "Juvenal" em "Rua B"!
+Sem dados de "Juvenal" em "Rua C"!
+Sem dados de "Juvenal" em "Rua D"!
+Sem dados de "Juvenal" em "Rua E"!
+O programa sera fechado, obrigado por fazer uso dele. Lembre-se de evitar a fadiga!
+
+Entrada
+
+
+1
+Rua A
+c 24
+Juvenal
+M 01/01/2000
+
+1
+Rua A
+c 24
+Juvenal
+M 02/01/2000
+
+1
+Rua A
+c 24
+Juvenal
+M 03/01/2000
+
+1
+Rua A
+c 24
+Juvenal
+M 04/01/2000
+
+1
+Rua A
+c 25
+Juvenal
+M 05/01/2000
+
+1
+Rua A
+e 10 20 2
+Juvenal
+M 06/01/2000
+
+2
+Juvenal
+Rua A
+
+3
+
+Saída
+
+
+Casa: 24 | Sexo: M | Nascimento: 01/01/2000
+Casa: 24 | Sexo: M | Nascimento: 02/01/2000
+Casa: 24 | Sexo: M | Nascimento: 03/01/2000
+Casa: 24 | Sexo: M | Nascimento: 04/01/2000
+Casa: 25 | Sexo: M | Nascimento: 05/01/2000
+Edificio: 10 | Andar: 20 | Numero do apt.: 2 | Sexo: M | Nascimento: 06/01/2000
+Foram encontradas 6 instancias de pessoas chamadas "Juvenal" em "Rua A", relatadas acima.
+O programa sera fechado, obrigado por fazer uso dele. Lembre-se de evitar a fadiga!

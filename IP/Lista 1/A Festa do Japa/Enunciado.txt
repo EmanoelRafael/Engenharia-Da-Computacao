@@ -1,0 +1,74 @@
+ Descrição
+
+Um grupo de médicos japoneses pretende dar uma festa para comemorar seus anos de amizade. A festa irá acontecer na casa do renomado psicólogo Kurano Koko, que terá ajuda de seu amigo, neurocirurgião, Takafuro Nokoko para preparar a casa. Dessa forma Kutuka Kaguya, uma acupunturista, ficou responsável de convidar outras pessoas e de pedir os saquês, manjus e yakitoris para a festa.
+                            Kaguya?  
+Kaguya pede ajuda de seu velho amigo, Fujiro Kamyamoto para trazer as coisas. Entretanto, devido à grande quantidade de assaltos, Kamyamoto sempre age com pressa, esquecendo de algumas coisas, por isso Kaguya não tem certeza se Kamyamoto trouxe tudo na quantidade correta.
+
+Kaguya?
+
+    Cada Pessoa tem direito a:
+
+    4 Copinhos de saquê 
+    5 Manjus
+    3 Yakitoris
+
+
+Sua função é descobrir se Kamyamoto trouxe a quantidade suficiente ou em falta de Saquês, Manjus e Yakitoris.
+
+Formato de entrada
+
+Quatro inteiros positivos:
+
+A B C D, Saquês, Manjus, Yakitoris, Pessoas, respectivamente.
+
+Tal que D>=4 (Os que organizaram a festa).
+
+
+OBS: Os saquês são trazidos em garrafas de 675ml e cada copinho tem 45ml.
+
+Você deve transformar as garrafas em copinhos.
+
+Formato de saída
+A saída consiste nas Seguintes frases:
+
+    "Partiu Festa do Japa!" - Caso todos sejam suficientes.
+    "Partiu Festa do Japa...Japacama" - Caso faltem todos os itens.
+    "Faltaram X D"
+    "Faltaram X D1 e Y D2"
+
+
+Onde X e Y são a quantidade de coisas que faltaram e
+
+D={"saques","manjus","yakitoris"}, dependendo do que sobrou.
+
+Caso faltem dois:
+
+    Ordem de escrita: saques -> manjus -> yakitoris
+    ex: "Faltaram 5 saques e 3 manjus"
+
+
+OBS2: Todas as frases são seguidas de uma quebra de linha e sem aspas.
+
+OBS3: O que faltam são COPINHOS DE SAQUÊ, não garrafas.
+
+Exemplos de:
+
+Entrada
+
+
+37 1375 343 145
+
+Saída
+
+
+Faltaram 25 saques e 92 yakitoris
+
+Entrada
+
+
+43 89 40 25
+
+Saída
+
+
+Faltaram 36 manjus e 35 yakitoris

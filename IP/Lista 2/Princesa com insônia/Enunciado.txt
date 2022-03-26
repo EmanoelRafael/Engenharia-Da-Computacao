@@ -1,0 +1,51 @@
+
+Descrição
+
+"Um dragão, dois dragões, três dragões", contava a princesa. Ela tinha problemas para dormir, e ficou entediada de contar carneirinhos.
+
+Porém, apenas contar dragrões ficou entediante também. Então, hoje ela imaginou que todos os dragões queriam raptá-la, e ela lutava com eles. Todo dragão múltiplo de k levou uma panelada na cara. Todo dragão múltiplo de i teve uma porta foi fechada em seu rabo. Todo dragão múltiplo de m teve sua pata pisada com um tamanco. E todo dragão múltiplo de n chorou ao ser ameaçado de ligarem para sua mãe.
+
+Quantos dragões imaginários sofreram danos morais ou físicos hoje, sabendo que a princesa contou um total de d dragões.
+
+(Observação: Ela começa a contagem no número 1.)
+
+Formato de entrada
+
+Existirão 5 inteiros separados por quebras de linhas na entrada. Cada inteiro representa respectivamente os números k, i, m, n e d especificados na descrição.
+
+1 <= k, i, m, n <= 1000
+1 <= d <= 10000
+
+Formato de saída
+
+Imprima a quantidade de dragões que sofreram danos morais ou físicos naquela noite.
+
+Exemplos de:
+
+Entrada
+
+
+1
+2
+3
+4
+12
+
+Saída
+
+
+12
+
+Entrada
+
+
+2
+3
+4
+5
+24
+
+Saída
+
+
+17

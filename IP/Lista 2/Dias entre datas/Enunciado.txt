@@ -1,0 +1,24 @@
+Descrição
+
+Escreva um programa que calcule o número de dias entre duas datas dadas.
+
+Formato de entrada
+
+Consiste de duas datas formatadas representando a data inicial e a final.
+
+Formato de saída
+
+Uma linha contendo o número de dias entre as duas datas.
+
+Exemplos de:
+
+Entrada
+
+
+12/12/1732
+26/08/1981
+
+Saída
+
+
+90837

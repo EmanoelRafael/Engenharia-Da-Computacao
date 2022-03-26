@@ -1,0 +1,42 @@
+Problem Statement
+
+Considere a fatura anual de um cartão
+
+----------------------------------------
+Data;Tipo;Compra;Valor;
+14 JAN;Amazon;40.32;
+15 JAN;Uber;14.84;
+25 JAN;Uber;34.24;
+02 FEV;Spotify;8.50;
+06 FEV;Uber;6.94;
+05 MAR;Burger;29.90;
+10 MAR;Burger;24.99;
+15 MAR;UCI;19.00;
+08 ABR;Itunes;3.50;
+13 ABR;Picpay;20.00;
+----------------------------------------
+
+Essa fatura é representada pela String:
+
+"14 JAN;Amazon;40.32;15 JAN;Uber;14.84;25 JAN;Uber;34.24;02 FEV;Spotify;8.50;06 FEV;Uber;6.94;05 MAR;Burger;29.90;10 MAR;Burger;24.99;15 MAR;UCI;19.00;08 ABR;Itunes;3.50;13 ABR;Picpay;20.00;"
+
+Escreva a função
+
+minMaxCartao :: String -> (Double, Double)
+
+que recebe uma String referente a fatura anual e retorna uma tupla com o menor e o maior dos valores gastos.
+
+Utilize a seguinte função main para chamar minMaxCartao
+
+main = do
+    a <- getLine
+    let result = minMaxCartao a
+    print result
+
+Input
+
+Uma string
+
+Output
+
+Uma tupla com dois Double

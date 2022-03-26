@@ -1,0 +1,36 @@
+ Descrição
+
+"La vem o homem macaco, que não tem flash e nem exaustão" (HUGO, Victor)
+
+Kinho é um exímio jogador de League of Legends, ele aterroriza todos em Summoner's Rift com seu campeão preferido, o Wukong. Em uma de suas últimas aventuras no jogo, Kinho enfrentou um grande adversário, o lendário GLX-Infectado. 
+
+Acontece que, durante esse confronto, Kinho recebeu uma ligação de seu amigo Hazuni, que dizia ter inventado uma nova série matemática muito interessante, a série consistia na soma dos inversos dos pares de primos gêmeos. Kinho ficou maravilhado com aquilo, e, apesar de já estar derrubando o inibidor do pobre Infectado, ele não conseguia mais pensar em outra coisa a não ser naquela sequência de primos invertidos, e acabou perdendo a partida. 
+
+Com isso, Kinho não quer mais perder partidas por estar pensando nos primos de Hazuni, então, cabe a você pensar neles! 
+
+
+A série de Hazuni é da seguinte forma:
+
+B2 = (1/3 + 1/5) + (1/5 + 1/7) + (1/11+1/13)+...
+
+Cada termo da série é a soma dos inversos de um par de primos gêmeos, onde dois números primos são gêmeos se a diferença entre eles for igual a 2.
+
+Formato de entrada
+
+Um número 1 <= n <= 300 , correspondendo a quantidade de termos que você deve calcular na série
+
+Formato de saída
+
+Um número de ponto flutuante com 10 casas decimais, correspondendo a soma dos n primeiros termos da série
+
+Exemplos de:
+
+Entrada
+
+
+5
+
+Saída
+
+
+1.2222185755

@@ -1,0 +1,42 @@
+Vinicius é um ótimo programador, mas é meio doido também. Certo dia ele foi desafiado por seu amigo a escrever um programa que gerasse um triangulo, como o abaixo, dado uma letra do alfabeto que representa até onde ele deve ir.
+
+...A...
+..ABA..
+.ABCBA.
+ABCDCBA
+
+assim ele pensou num programa para fazer um triângulo desses para ele. Escreva um programa que dada uma letra (entre A e Z) imprima um triangulo até ela.
+
+Formato de entrada
+
+Uma letra C (Entre A e Z) que dirá até onde será feito o triângulo
+
+Formato de saída
+
+Um triângulo como o da imagem acima.
+
+Exemplos de:
+
+Entrada
+
+
+D
+
+Saída
+
+
+...A...
+..ABA..
+.ABCBA.
+ABCDCBA
+
+Entrada
+
+
+B
+
+Saída
+
+
+.A.
+ABA

@@ -1,0 +1,26 @@
+
+Descrição
+
+Faça um programa que dada uma string analise se é um palíndromo ou não.
+
+Formato de entrada
+
+Uma string de tamanho máximo 100.
+
+Formato de saída
+
+S, se for palíndromo.
+
+N, se não for.
+
+Exemplos de:
+
+Entrada
+
+
+aaabbbbbbaaa
+
+Saída
+
+
+S

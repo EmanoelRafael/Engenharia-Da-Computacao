@@ -1,0 +1,76 @@
+
+Descrição
+
+Faça um programa que identifica se uma frase é anagrama de outra. Duas strings são anagramas uma da outra se elas usam exatamente as mesmas letras, desconsiderando os espaços em branco e pontuação.
+
+Formato de entrada
+
+Duas strings, para que seja verificado se são anagramas uma da outra. Você deve ignorar a capitalização. Letras maiúsculas e minúsculas são consideradas iguais.
+
+Além de espaços em branco, as strings de entrada podem conter a seguinte pontuação:
+
+    Ponto "."
+    Vírgula ","
+    Exclamação "!"
+    Interrogação "?"
+
+Formato de saída
+
+Um valor booleano que indica se as strings são anagramas uma da outra.
+
+Exemplos de:
+
+Entrada
+
+
+The earthquakes
+That queer shake
+
+Saída
+
+
+True
+
+Entrada
+
+
+Election results
+Lies – let's recount
+
+Saída
+
+
+False
+
+Entrada
+
+
+ô mininim bunitim!
+ô mininim bunitim
+
+Saída
+
+
+True
+
+Entrada
+
+
+Thats one small step for a man. One giant leap for mankind. Neil Armstrong
+Thin man ran... makes a large stride... left planet... pins flag on moon... on to Mars!
+
+Saída
+
+
+True
+
+Entrada
+
+
+Halley's Comet
+Shall yet come
+
+Saída
+
+
+False

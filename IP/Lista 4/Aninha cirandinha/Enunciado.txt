@@ -1,0 +1,53 @@
+
+Descrição
+
+Aninha adora números e ciranda, por isso, ela criou uma dança chamada aninha cirandinha! Agora, ela precisa da sua ajuda para identificar quando uma sequencia de números consegue formar sua dança.
+
+Existem n estudantes em pé em um círculo em alguma ordem. Cada estudante possui um índice e é garantido que estes índices sejam inteiros distintos de 1 a n(isto é, eles formam uma permutação).
+
+Os estudantes querem começar uma aninha cirandinha. Uma aninha cirandinha no sentido horário pode ser iniciada se o aluno 2 vem logo após o aluno 1 no sentido horário (não há alunos entre eles), o aluno 3 vem logo após o aluno 2 no sentido horário, e assim por diante, e o aluno n vem logo após o aluno n-1 no sentido horário. uma aninha cirandinha no sentido anti-horário é quase a mesma coisa, a única diferença é que o aluno n deve aparecer logo após o aluno n-1 no sentido anti-horário.
+
+Por exemplo, se os índices dos estudantes listados no sentido horário forem [2, 3, 4, 5, 1], então eles podem começar uma aninha cirandinha no sentido horário. Se os alunos tiverem índices [3, 2, 1, 4] no sentido horário, eles podem iniciar uma aninha cirandinha no sentido anti-horário. Caso a dança possa ser iniciada em ambos os sentidos, Aninha tem preferência pelo sentido horário. 
+
+Sua tarefa é determinar se é possível começar uma aninha cirandinha. Note que os alunos não podem mudar suas posições antes de iniciar a dança; eles não podem trocar ou deixar o círculo e nenhum outro aluno pode entrar no círculo.
+
+Você precisa responder Q casos. 
+
+
+Formato de entrada
+
+A primeira linha da entrada contém um inteiro Q (1 <= Q <= 200), o número de casos. Então, seguem Q casos.
+
+A primeira linha de cada caso contém um inteiro n (1 <= n  <= 200), o número de alunos que vão participar da dança redonda.
+
+A segunda linha contém uma permutação de índices p1, p2,..., pn (1 <=  Pi <= n), onde Pi é o índice do i-ésimo aluno. É garantido que todos os Pi são inteiros distintos(formam permutação). 
+
+Formato de saída
+
+Para cada caso teste imprima "SIM" caso a dança possa ser iniciada com a ordem de alunos e o sentido em que a dança foi iniciada, seguido de uma quebra de linha. Caso contrário, "NAO".
+
+Exemplos de:
+
+Entrada
+
+
+5
+4
+1 2 3 4
+3
+1 3 2
+5
+1 2 3 5 4
+1
+1
+5
+3 2 1 5 4
+
+Saída
+
+
+SIM, HORARIO
+SIM, ANTI-HORARIO
+NAO
+SIM, HORARIO
+SIM, ANTI-HORARIO

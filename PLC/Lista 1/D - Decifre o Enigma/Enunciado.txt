@@ -1,0 +1,27 @@
+Problem Statement
+
+Crie uma função
+
+decEnigma :: String -> [(Char, Char)] -> String
+
+que decifra uma string da linguagem A para a linguagem B.
+
+Ela recebe a string que precisa ser decifrada e uma lista de tuplas contendo os dois alfabetos.
+
+Os primeiros caracteres da tupla, representam o alfabeto de A e, os segundos, de B.
+
+Utilize a seguinte função main para chamar decEnigma
+
+main = do
+    a <- getLine
+    b <- getLine
+    let result = decEnigma a (read b)
+    print result
+
+Input
+
+Uma String e uma lista de tuplas, um em cada linha
+
+Output
+
+Uma String

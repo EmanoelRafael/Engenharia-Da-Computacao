@@ -1,0 +1,19 @@
+Descrição 
+
+Finalizando mais um dia atuando como kemist na Rubens Enterprise, empresa de encapsulamento de 
+tempo líquido para uso pessoal da fundadora, Meme Man decide ir ao mercado reabastecer sua geladeira, 
+seguindo seu sistema um tanto quanto louco. Entretanto, ele percebe que não tinha feito sua lista de 
+compras, então ele liga para você e lhe pede para o dizer o quanto de cada item ele deve comprar a 
+partir das seguintes regras:
+
+    - Se ovos foram comprados, deve ser comprado leite para totalizar 2 litros juntamente com o que há em casa, 
+    caso não já se tenha pelo menos essa quantia. No entanto, se ovos não tiverem sido comprados, compre 
+    meio litro de leite;
+    - Se laranjas foram compradas, compre duas bananas para cantar a música da Xuxa enquanto vai para casa;
+    - * A não ser que já se tenha laranja em casa, compre uma quantidade de laranjas igual ao quadrado da quantidade 
+    de bananas que já estão em casa;
+    - Se a quantidade total (casa + compras) de bananas for maior que a quantidade de ovos em casa, compre ovos até 
+    sua quantia total de ovos igualar-se à quantidade de laranjas compradas.
+
+Você, que possui conhecimento do sistema do Meme Man e está na casa dele nesse momento, deve informá-lo o quanto de 
+cada item ele deve comprar, de acordo com as regras estabelecidas para garantir a nutrição do nosso querido personagem.

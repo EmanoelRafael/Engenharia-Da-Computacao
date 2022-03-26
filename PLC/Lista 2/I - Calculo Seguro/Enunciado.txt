@@ -1,0 +1,53 @@
+Problem Statement
+
+Escreva uma programa que possua a função
+
+safeCalc :: String -> IO ()
+
+que recebe uma expressão do tipo xOPy, onde x e y são números naturais e OP é uma operação (sum, sub, mul e div), e escreve Just o resultado no console. Tenha em mente que o resultado pode ser um número negativo. No caso de divisão por 0, o resultado deverá ser Nothing.
+
+Os número x e y podem ter zeros à esquerda.
+
+As operações podem ser "sum", "sub", "mul" e "div" (divisão inteira).
+
+Utilize a seguinte definição para Maybe e função main:
+
+import Prelude hiding (Maybe (..))
+
+data Maybe a = Just a |
+               Nothing
+               deriving(Show)
+
+main = do
+       a <- getLine
+       safeCalc a
+
+Input
+
+Uma String
+
+Output
+
+Um Int
+
+Examples
+
+Case: 1
+
+Input
+
+3sum4
+
+Output
+
+Just 7
+
+Case: 2
+
+Input
+
+2sub3
+
+Output
+
+Just (-1)

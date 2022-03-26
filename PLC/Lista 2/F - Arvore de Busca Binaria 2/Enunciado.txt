@@ -1,0 +1,42 @@
+Problem Statement
+
+Considere o seguinte tipo:
+
+data Tree t = Nilt |
+               Node t (Tree t) (Tree t)
+               deriving (Read, Show)
+
+Faça a função
+
+insertList :: Ord t => Tree t -> [t] -> Tree t
+
+que recebe uma árvore e uma lista de valores e insere os elementos dessa lista na árvore de forma que ela continue sendo uma árvore de busca binária, ou seja, todos os valores em nós nas subárvores à esquerda são sempre menores que valor do nó, e todos os das subárvores à direita sempre maiores. Não haverá números repetidos.
+
+Utilize a seguinte função main para chamar insertList:
+
+main = do
+       a <- getLine
+       b <- getLine
+       let result = insertList (read a::Tree Int) (read b)
+       print result
+
+Input
+
+Um Tree e uma lista, um em cada linha
+
+Output
+
+Um Tree
+
+Examples
+
+Case: 1
+
+Input
+
+Node 10 (Node 5 (Nilt) (Nilt)) (Nilt)
+[1,6,20]
+
+Output
+
+Node 10 (Node 5 (Node 1 Nilt Nilt) (Node 6 Nilt Nilt)) (Node 20 Nilt Nilt)

@@ -1,0 +1,82 @@
+Enunciado:
+
+O Teorema Fundamental das Rotações propõe que uma BST S pode ser transformada numa BST T, com os mesmos valores, apenas através de uma quantidade apropriada de rotações. Isso pode ser verificado através do procedimento a seguir.
+
+Etapa 1. Transforma S numa "espinha à esquerda" E, ou seja, uma BST sem nenhum nó à direita do seu pai. Etapa 2. Transforma E em T
+
+A Etapa 1 é realizada efetuando-se rotações à esquerda na raiz na árvore até que ela não tenha mais filho à direita. Assim que isso ocorrer, repete-se o processo na subárvore à esquerda, e assim sucessivamente que tenhamos apenas um ramo à esquerda.
+
+O diagrama abaixo ilusta essa Etapa. Os nós nos quais ocorrem as rotações à esquerda são sinalizados por um *.
+
+S =    3*              5*            6             6     E =   6    
+     /   \           /   \          /             /           /
+    1     5         3     6        5             5           5
+     \   / \       / \            /             /           /
+      2 4   6     1   4          3*            4           4
+                   \            / \           /           /
+                    2          1   4         3           3    
+                                \           /           /
+                                 2         1*          2
+                                            \         /
+                                             2       1
+
+Na Etapa 2, inicialmente efetuamos rotações à direita na raiz da espinha E até que ela tenha o mesmo valor na raiz que T. Nesse momento, as subárvores à esquerda e à direita da raiz de E também possuem os mesmos valores que as respectivas subárvores à esquerda e à direita da raiz de T. Mais ainda, a subárvore à esquerda da raiz de E é uma espinha à esquerda e, portanto, o mesmo procedimento da Etapa 2 pode ser aplicado a essa subárvore para transformá-la na subàrvore à esquerda da raiz de T. Já a subárvore à direita da raiz de E é uma espinha à direita, e portanto, a princípio, a Etapa 2 não pode ser aplicada diretamente. Porém, podemos modificar facilmente essa Etapa para se aplicar igualmente a uma espinha à direita. Basta que, incialmente, efetuemos rotações à direita ou à esquerda na raiz de E, conforme ela seja uma espinha à esquerda ou à direita, respectivamente, até que a raiz tenha o mesmo valor que a raiz de T. Em seguida, resolvemos o problema recursivamente pelo mesmo algoritmo à esquerda e à direita da raiz.
+
+Por exemplo, considere a conversão da espinha acima na BST T a seguir.
+
+         4 
+T =    /   \
+      2     6
+     /\    /
+    1  3  5
+    
+Efetuando duas rotações à direita na raiz de E, teremos
+
+        4   
+      /   \
+     3     5
+    /       \
+   2         6 
+  /
+ 1
+
+Em seguida, precisamos tranformar a subárvore à esquerda efetuando uma rotação à direita no nó 3, obtendo
+
+        4   
+      /   \
+     2     5
+    / \     \
+   1   3     6 
+
+Finalmente, precisamos de uma rotação à esquerda na raiz da subárvore à direita (5), obtendo a árvore destino.
+
+Input Specification:
+
+A entrada consiste de vários casos, cada um correspondente a um par de BSTs S (source) e T (target) na forma
+
+N
+S[0] S[1] ... S[N-1]
+T[0] T[1] ... T[N-1]
+//linha em branco
+
+onde
+
+    N é o número de vértices das árvores, com valores 0..N-1
+    A Árvore S é a BST resultante da inserção sucessiva dos valores S[0]..S[N-1] nessa ordem
+    B é a BST cujos nós enumerados em pré-ordem são T[0] T[1] ... T[N-1]
+
+Output Specification:
+
+Para cada caso da entrada, deve ser impressa uma saída correspondente na forma
+
+L R
+T[0] T[1] ... T[N-1]
+A
+//linha em branco
+
+onde
+
+    L e R correspondem aos números de rotações à esquerda e à direita, respectivamente, necessárias para transformar L em R de acordo com o algoritmo descrito acima
+    T[0] T[1] ... T[N-1] corresponde à enumeração dos nós da BST T em pós-ordem
+    A é um booleano "true" ou "false" que indica se a BST T é uma AVL.
+

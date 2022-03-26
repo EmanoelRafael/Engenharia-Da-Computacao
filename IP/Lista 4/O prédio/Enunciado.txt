@@ -1,0 +1,48 @@
+
+Descrição
+
+Em um prédio da Zona Norte de Recife, um cara regular foi pegar o seu pedido do iFood na portaria. Depois de esperar 15 minutos para o elevador chegar, ele decide criar um programa que fizesse a otimização do elevador onde ele mora. Esse programa calcula que em um prédio que tem Z andares, o elevador tem que levar todos os os passageiros que solicitaram o elevador até o térreo (considerar o térreo o andar 0). Porém o elevador tem um número limite N máximo de passageiros que pode levar de uma vez. Seu código deve receber Z, N e o número de solicitações. Depois, pra cada solicitação, o código deve receber um andar e quantidade de pessoas que vão entrar naquele andar. Se o elevador parar em um andar que vão entrar mais pessoas que o número limite contando com as pessoas que já estão lá, o elevador desce com o número máximo e as pessoas excedentes ficam no mesmo andar e fazem uma nova solicitação. Considerando que o elevador sempre se encontra no Térreo do prédio além de que, para otimizar, ele não poderá alternar entre subindo ou descendo até atingir os limites, ou seja, sempre desce até o terréo e sobe até a ultima solicitação, calcule quantos andares o elevador percorreu para zerar as solicitações e levar todos os passageiros para o térreo.
+
+Formato de entrada
+
+    O número inteiro 0 < Z <= 1000 de andares
+    O número 0 < N <= 1000 (sim, mil pessoas num elevador) do limite de passageiros do elevador
+    A quantidade de solicitações 0 <= X <= 10
+    X solicitações no formato: 
+
+            Número do andar   Quantidade de Pessoas
+
+Formato de saída
+
+Um número que represente a quantidade de andares percorridos pelo elevador para exeutar sua função.
+
+Exemplos de:
+
+Entrada
+
+
+20 5
+5 
+1 1
+2 2 
+3 3
+4 4
+5 5
+
+Saída
+
+
+24
+
+Entrada
+
+
+5 3
+2
+1 2
+4 3
+
+Saída
+
+
+16

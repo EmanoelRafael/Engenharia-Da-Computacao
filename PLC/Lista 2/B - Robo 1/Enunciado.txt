@@ -1,0 +1,82 @@
+Problem Statement
+
+Considere o seguinte tipo:
+
+data Command = Forward Int | Backward Int | TurnLeft | TurnRight 
+               deriving (Eq, Show, Read)
+
+Faça a função
+
+destination :: (Int,Int) -> [Command] -> (Int,Int) 
+
+que recebe um tupla com a coordenada inicial do robô e uma lista de comandos e retorne um tupla com as coordenadas da posição do robô após a execução dos comandos dessa lista. O robô sempre começa orientado para o norte (i.e. para o posição (0,1)).
+
+O robô é controlado por 4 comandos:
+
+Left, para girar sua direção em 90 graus no sentido anti-horário.
+
+Right, para girar sua direção em 90 graus no sentido horário.
+
+Forward seguido de um número N, que indica um avanço de N metros.
+
+Backward seguido de um número N, que indica um retrocesso de N metros.
+
+Exemplo de posições/coordenadas:
+
+(-2, 2) (-1, 2) (0, 2) (1, 2) (2, 2)
+
+(-2, 1) (-1, 1) (0, 1) (1, 1) (2, 1)
+
+(-2, 0) (-1, 0) (0, 0) (1, 0) (2, 0)
+
+(-2,-1) (-1,-1) (0,-1) (1,-1) (2,-1)
+
+(-2,-2) (-1,-2) (0,-2) (1,-2) (2,-2)
+
+Utilize a seguinte função main para chamar destination:
+
+main = do
+       a <- getLine
+       b <- getLine
+       let result = destination (read a) (read b)
+       print result
+
+Input
+
+Uma tupla e uma lista, um em cada linha
+
+Output
+
+Uma tupla
+
+Examples
+
+Case: 1
+
+Input
+
+(0,0)
+[Forward 2, TurnLeft, TurnLeft, Forward 1]
+
+Output
+
+(0,1)
+
+Case: 2
+
+Input
+
+(1,0)
+[Backward 2, Forward 1]
+
+Output
+
+(1,-1)
+
+destination (13,-98) [TurnRight, TurnRight, Forward 10]
+
+(0,0)
+[Forward 2, TurnLeft, TurnLeft, TurnLeft, Backward 1]
+(5,-3)
+[TurnRight, TurnRight, Forward 3, TurnLeft, Backward 1, TurnRight, TurnRight, Forward 7]
+

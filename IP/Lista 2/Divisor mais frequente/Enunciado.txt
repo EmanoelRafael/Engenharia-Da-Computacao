@@ -1,0 +1,42 @@
+
+Descrição
+
+Faça um programa que encontre o divisor mais frequente d de um número x, e quantas n vezes d o divide. O divisor mais frequente é o número que pode dividir mais vezes o número x.
+
+Se houver dois números que dividem x a mesma quantidade de vezes, então imprima o menor deles.
+
+Exemplo: o divisor mais frequente de 12 é 2, pois o divide 2 vezes.
+
+(Observação: Apenas divisores maiores ou iguais a 2 serão considerados.)
+
+Formato de entrada
+
+A entrada é um inteiro contendo o número x.
+
+2 <= x <= 1000000
+
+Formato de saída
+
+A saída deve seguir o seguinte formato: "mostFrequent: d, frequency: n", onde d e n são especificados na descrição.
+
+Exemplos de:
+
+Entrada
+
+
+12
+
+Saída
+
+
+mostFrequent: 2, frequency: 2
+
+Entrada
+
+
+18
+
+Saída
+
+
+mostFrequent: 3, frequency: 2

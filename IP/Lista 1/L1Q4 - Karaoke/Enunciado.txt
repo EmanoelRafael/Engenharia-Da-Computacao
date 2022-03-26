@@ -1,0 +1,73 @@
+Descrição 
+
+Para se divertir um pouco em uma das suas noites no Japão, o grupo de alunos do CIn resolveu ir em um karaokê. Todo mundo estava indo cantar, e lhe chamaram para cantar também, porém, você, por ser tímido, queria passar o menor tempo possível em cima do palco, com a menor quantidade de pessoas possível lhe olhando. Para isso, você teve a ideia de criar um programa, em que dado o número de pessoas no local, o número de amigos que estão com você, o tempo de duração de 3 músicas e o grau de vergonha de cada música (que era o quanto você ficaria com vergonha se cantasse essa música), definia se com esse número de pessoas era uma boa ideia cantar naquele momento e caso fosse, definisse qual dessas músicas era a melhor a se cantar.
+
+Para definir se o número de pessoas no local era ideal, usa-se a seguinte fórmula:
+
+ideal = raiz(numDePessoas)
+
+Caso o numero ideal seja maior que o número de amigos que estão com você no karaokê, você não se sentiria confortável em cantar, logo o programa deveria imprimir "Não cantarei, desculpa.".
+
+Caso contrário, o programa deve definir a música a ser escolhida utilizando a seguinte fórmula:
+
+Vergonha = (tempoMusica^2)*grauDeVergonha
+
+A música com a menor vergonha deverá ser escolhida e o programa deve imprimir: "Você deve cantar a música X, boa sorte!", em que X representa o número da música escolhida.
+
+OBS: Caso duas músicas tenham vergonha igual, a música com o menor número deve ser escolhida.
+
+
+
+Formato de entrada
+
+O programa receberá uma entrada no formato:
+
+    N M
+
+    T1 V1
+
+    T2 V2
+
+    T3 V3
+
+Em que N é um número inteiro que representa o número de pessoas no local, M é o número de amigos que estão com você no karaokê, T1,T2 e T3 são números inteiros que representam a duração em segundos das músicas 1,2 e 3 respectivamente e V1,V2 e V3 são números inteiros que representam o grau de vergonha das músicas 1, 2 e 3 respectivamente.
+
+Formato de saída
+
+Caso Ideal seja maior que o número de amigos, deve-se imprimir:
+
+    Não cantarei, desculpa.
+
+Caso contrário, deve-se imprimir uma saída do tipo:
+
+    Você deve cantar a música X, boa sorte!
+
+Em que X é o número da música escolhida de acordo com a fórmula de vergonha dada na descrição do problema.
+
+Exemplos de:
+
+Entrada
+
+
+9 2
+60 2
+70 1
+80 1
+
+Saída
+
+
+Não cantarei, desculpa.
+
+Entrada
+
+
+10 4
+100 3
+150 2
+200 1
+
+Saída
+
+
+Você deve cantar a música 1, boa sorte!

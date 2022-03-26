@@ -1,0 +1,85 @@
+
+Descrição
+
+Faça um programa que leia da entrada padrão duas coordenadas (x e y em sequência) referente a um ponto qualquer e imprime em qual quadrante do plano cartesiano o referido ponto se encontra.
+
+Os pontos que se encontram sobre um dos eixos (quando x ou y for zero) não se encontram em quadrante algum. Nesse caso, você deve imprimir sobre qual eixo o ponto está, ou se o ponto encontra-se sobre a origem.
+
+Formato de entrada
+
+Coordenadas x e y (inteiras) de um ponto sobre um plano cartesiano.
+
+Formato de saída
+
+    Caso o ponto esteja sobre a origem, imprimir "Sobre a origem".
+
+    Caso o ponto não esteja sobre a origem mas esteja sobre um dos eixos, especifique sobre qual exio está ("Sobre o eixo x", por exemplo).
+    Em qualquer outro caso, especifique em qual quadrante o ponto está.
+
+Exemplos de:
+
+Entrada
+
+
+0
+-2
+
+Saída
+
+
+Sobre o eixo y
+
+Entrada
+
+
+3
+5
+
+Saída
+
+
+Primeiro Quadrante
+
+Entrada
+
+
+3
+-1
+
+Saída
+
+
+Quarto Quadrante
+
+Entrada
+
+
+-5
+3
+
+Saída
+
+
+Segundo Quadrante
+
+Entrada
+
+
+-5
+-2
+
+Saída
+
+
+Terceiro Quadrante
+
+Entrada
+
+
+0
+0
+
+Saída
+
+
+Sobre a origem

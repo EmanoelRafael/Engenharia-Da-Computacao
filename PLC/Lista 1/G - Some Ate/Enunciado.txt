@@ -1,0 +1,20 @@
+Problem Statement
+
+Usando recursão, implemente a função sumTo, de modo que sumTo n calcula o valor de 1 + 2 + ... + n.
+
+Utilize a seguinte função main para chamada de sua função sumTo:
+
+main :: IO()
+main = interact $ show . sumTo . read
+
+Input
+
+A entrada será de um único número no formato:
+
+    N
+
+Output
+
+A saída deve ser um único número no formato:
+
+    O

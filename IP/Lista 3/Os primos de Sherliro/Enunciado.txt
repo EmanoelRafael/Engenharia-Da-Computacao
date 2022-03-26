@@ -1,0 +1,45 @@
+
+Descrição
+
+Depois de conseguir consertar a sua nave, Sherliro Holmsliro e seu companheiro ChewBoncc embarcaram numa aventura para encontrar seu irmão, Stuart Mulittle e o dróide R2ur, porém eles tinham sido capturados pelo famoso oficial do império, o palpaléguas.
+
+Para libertar seus companheiros, Sherliro e ChewBoncc precisam desvendar a senha secreta. Ela é composta pelo somatório dos fatores primos do número captado pelo sinal de Sherliro em que cada fator é dividido pelo numero atual de primos encontrados em ordem crescente. Em seguida, deve-se pegar o teto desse somatório.
+
+Por exemplo, o numero 12 tem 3 fatores primos, sendo o primeiro achado o 2, o segundo outro 2 e o terceiro o 3, assim o somatório seria: 2/1 + 2/2 + 3/3 = 4 e o teto de 4 é 4.
+
+Mas tem um porém...como uma forma de melhorar a segurança do império, foi implementada uma regra de que se o resultante da operação acima não for um número primo, a senha falha pois primos são mais seguros.
+
+Nosso herói receberá 3 sinais, ou seja, terá três tentativas de resgatar seu irmão e R2ur. Ajude Sherliro com suas habilidades!
+
+
+OBS: PROIBIDO USAR A MATH.H (na monitoria vimos todas as ferramentas sem usar ela :)) )
+
+Formato de entrada
+
+A entrada consiste em 3 sinais recebidos, um para cada tentativa de Sherliro.
+
+Cada sinal é um inteiro 2 <= n <=10^13
+
+Formato de saída
+
+Para cada sinal:
+
+Se a senha for falha, exiba "ERRO".
+
+Caso a senha do atual sinal funcione, exiba "SHERLIRO SALVOU MULITTLE".
+
+Caso já tenha achado a senha antes de analisar todos os 3 sinais, exiba "SINAL OFF" para os restantes.
+
+Exemplos de:
+
+Entrada
+
+
+15 36 180
+
+Saída
+
+
+ERRO
+SHERLIRO SALVOU MULITTLE
+SINAL OFF

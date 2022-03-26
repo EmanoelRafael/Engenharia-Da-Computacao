@@ -1,0 +1,40 @@
+Problem Statement
+
+Dado o seguinte tipo algébrico
+
+data Tree t = Nilt |
+              Node t (Tree t) (Tree t)
+              deriving (Read)
+
+Escreva a função
+
+isBST :: Ord t => Tree t -> Bool
+
+que checa se uma árvore é uma árvore de busca binária, ou seja, todos os valores em nós nas subárvores à esquerda são sempre menores que o valor do nó, e todos os das subárvores à direita sempre maiores. Não há números repetidos na árvore
+
+Utilize a seguinte função main para chamar isBST:
+
+main = do
+       s <- getLine
+       let result = isBST (read s::Tree Int)
+       print result
+
+Input
+
+um Tree
+
+Output
+
+um Bool
+
+Examples
+
+Case: 1
+
+Input
+
+(Node 5 (Node 3 Nilt Nilt) (Node 7 Nilt Nilt))
+
+Output
+
+True

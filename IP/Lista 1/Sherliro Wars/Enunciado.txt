@@ -1,0 +1,58 @@
+
+Descrição
+
+Sherliro Holmsliro é um jovem muito aventureiro e adora vagar pela Via Luquétea em sua nave, a Murillium Falcon, acompanhado de seu companheiro o ChewBoncc.
+
+Sherliro estava se preparando para sua próxima expedição e pagar sua dívida com o o vilão mais tenebroso da Via Luquétea, o Jabbavitz The Hux, porém quando estava se preparando, notou que sua nave, a Murillium, poderia estar com defeito nos propulsores e então ele pediu ajuda ao terminal de comando para analisar quais desses propulsores estavam possivelmente danificados para que ele pudesse pagar o conserto.
+
+ChewBonnc lembrou a Sherliro que ele ainda tinha sua dívida a pagar com o Jabbavitz. 
+
+Você deve ajudar Sherliro a descobrir qual dos dois propulsores estão quebrados. Detalhe, se ambos estiverem quebrados, Sherliro ganha um desconto de 12% no de maior preço.
+
+Ajude Sherliro e ChewBoncc a descobrir se é possível quitar a divida com o Jabbavitz e consertar a nave.
+
+Formato de entrada
+
+Um float indicando o dinheiro total que Sherliro possui
+
+Dois inteiros (0 indicando que não está quebrado ou 1 indicando que está defeituoso) indicando quais dois propulsores estão danificados
+
+Dois floats indicando os preços dos 2 propulsores, respectivamente
+
+Um float indicando o valor da divida com o Jabbavitz
+
+Formato de saída
+
+se for possível pagar a dívida e consertar a nave, exiba a seguinte frase "Sherliro livre do Jabbavitz e podendo voar"
+
+caso não consiga quitar a dívida, mas consiga consertar a nave, exiba "Sherliro consertou mas ta lascado com o Jabbavitz" e, seguido por uma quebra de linha, quanto falta para pagar a dívida formatado com duas casas decimais, "faltam X Napoleocoins".
+
+caso não seja possível quitar a dívida nem consertar, exiba "Sherliro vai ser perseguido hoje e ainda ta sem nave" e, seguido por uma quebra de linha, quanto falta para pagar a dívida e para consertar a nave formatado com duas casas decimais, "faltam X Napoleocoins".
+
+Exemplos de:
+
+Entrada
+
+
+31441412
+0 1
+142354562 333
+5024
+
+Saída
+
+
+Sherliro livre do Jabbavitz e podendo voar
+
+Entrada
+
+
+500.00
+1 1
+27.55 38.90
+423.00
+
+Saída
+
+
+Sherliro livre do Jabbavitz e podendo voar

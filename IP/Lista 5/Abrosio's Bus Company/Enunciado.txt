@@ -1,0 +1,74 @@
+Descrição
+
+Ambrósio é sócio de muitas empresas. Uma das empresas de ambrósio é a Ambrósio's Bus Company que oferece o serviço de viagens de ônibus intermunicipais. A figura abaixo mostra a ficha de registro de cada passageiro. Os ônibus possuem 44 lugares numerados de 1 a 44.
+
+Você vai receber uma lista de passageiros com no máximo 44 elementos.
+
+Ao final imprima o nome de todos os passageiros que estiverem acima da média das idades e que estiverem sentados nas poltronas pares.
+
+Figura contem os campos:
+Numero da passagem
+Origem e Destino
+Data
+Horario
+Poltrona 
+Idade 
+Nome do passageiro 
+
+
+
+Formato de entrada
+
+Você receberá uma lista de registro de passageiros, com os valores dos campos número da passagem, data, de, para, horário, poltrona, idade e nome do passageiro,  conforme mostrado no exemplo abaixo:
+
+
+12
+15/05/2012
+Maceió
+Rio de Janeiro
+9:00
+12
+19
+Ana Maria Braga
+
+A entrada termina quando o valor do número da passagem for -1.
+
+Formato de saída
+
+Em cada linha, imprima o nome de todos os passageiros que estiverem acima da média das idades e que estiverem sentados nas poltronas pares.
+
+Exemplos de:
+
+Entrada
+
+
+12
+15/05/2012
+Maceió
+Rio de Janeiro
+9:00
+12
+19
+Ana Maria Braga
+48
+14/05/2012
+Maceió
+São Paulo
+9:00
+7
+30
+Sílvio Santos
+1
+14/05/2012
+Maceió
+Salvador
+9:00
+16
+40
+Pequeno Mestre Yoda
+-1
+
+Saída
+
+
+Pequeno Mestre Yoda

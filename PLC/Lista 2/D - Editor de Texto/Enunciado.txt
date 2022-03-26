@@ -1,0 +1,82 @@
+Problem Statement
+
+Considere o seguinte tipo:
+
+data Cmd = Cursor Int
+           | Backspace Int
+           | Delete Int
+           | Insert String
+           deriving (Read)
+
+Crie a função
+
+editText :: String -> [Cmd] -> String
+
+que recebe uma String e uma lista de comandos. A função deve executar os comandos e retornar a String editada.
+
+Cursor X: anda o cursor X casas para frente (números positivos) ou para trás (números negativos). No início o cursor está na posição 0 e aponta para o primeiro caractere na String de entrada. O valor do cursor é sempre não negativo e nunca é maior que o tamanho da String de entrada. Para simplificar, nenhuma operação vai violar os limites da posição do cursor.
+
+Backspace X: Apaga X caracteres atrás do cursor (não inclui o caractere apontado pelo cursor). Tenha em mente que esse operador também muda a posição do cursor
+
+Delete X: Apaga X caracteres na frente do cursor (inclui o caractere apontado pelo cursor).
+
+Insert S: Insere a String S na posição do cursor (o caractere apontado pelo cursor vai aparecer imediatamente depois de S). O cursor vai passar a apontar para o começo da String inserida
+
+Utilize a seguinte função main para chamar editText:
+
+main = do
+       a <- getLine
+       b <- getLine
+       let result = editText a (read b)
+       print result
+
+Input
+
+Uma String e uma lista, um em cada linha
+
+Output
+
+Uma String
+
+Examples
+
+Case: 1
+
+Input
+
+texto magnifico
+[Insert "O "]
+
+Output
+
+"O texto magnifico"
+
+Case: 2
+
+Input
+
+texto magnifico
+[Delete 6, Insert "O "]
+
+Output
+
+"O magnifico"
+
+Case: 3
+
+Input
+
+texto magnifico
+[Cursor 6, Backspace 6]
+
+Output
+
+"magnifico"
+
+Hello World!!
+[Cursor 6, Insert "Motherfucking ", Cursor 20, Insert "Awesome!!", Cursor 9, Backspace 3]    
+"Hello Motherfucking World!Awesom!"
+
+Hello World!!
+[Cursor 6, Insert "Motherfucking ", Cursor 20, Insert "Awesome!!", Cursor 9, Backspace 3, Cursor (-6), Delete 7]
+"Hello Motherfucking World!Awesom!"

@@ -1,0 +1,68 @@
+Descrição
+
+A empresa WOOF está entrando no mercado das redes sociais. Só que ela precisa de um banco de dados para armazenar os dados dos seus usuários.
+O dono da empresa é muito amigo seu, e sabe que você é um ótimo programador, logo, te chamou para implementar esse banco de dados.
+As informações dos usuários que você deve guardar são:
+
+Idade.
+Nome.
+Sexo.
+Estado civil.
+Quantidade de amigos.
+Quantidade de fotos.
+
+Formato de entrada
+
+Você vai receber os dados do usuário:
+
+Um inteiro, representando a quantidade de usuários a serem adicionados ao banco de dados.
+
+Um inteiro, contendo a idade.
+Uma string, de até 50 caracteres, contendo o nome.
+Um caractere, sendo ele M ou F, que é o sexo.
+Uma caractere, simbolizando o estado cívil:
+ S - Solteiro, C - Casado. N - Namorando. D - Divorciado.
+Um inteiro, representando o número de amigos.
+Um inteiro, representando a quantidade de fotos que estão no perfil.
+
+Formato de saída
+
+Imprimir as informações de todos os usuários, na sequencia em que eles foram adicionados, uma por linha.
+
+Deve haver uma quebra de linha entre os casos de testes e ao fim do programa.
+
+Exemplos de:
+
+Entrada
+
+
+2
+20
+Caio
+M
+S
+150
+300
+15
+Ana
+F
+S
+1000
+1500
+
+Saída
+
+
+Idade: 20
+Nome: Caio
+Sexo: M
+Estado Civil: S
+Numero de amigos: 150
+Numero de fotos: 300
+
+Idade: 15
+Nome: Ana
+Sexo: F
+Estado Civil: S
+Numero de amigos: 1000
+Numero de fotos: 1500

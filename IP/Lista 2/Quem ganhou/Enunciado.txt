@@ -1,0 +1,64 @@
+
+Descrição
+
+Quem ganhou? Essa é a pergunta que não quer calar. Em toda a cidade esse é o assunto mais comentado, todo mundo quer saber o resultado final. Todos querem extrair o máximo de informação de todo lugar para chegar na resposta. Você, assim como todo mundo, quer saber quem ganhou. Para isso, você irá analisar o dados da partida e as regras do jogo para dizer o resultado para todo mundo.
+
+Regras: 
+
+No jogo existem duas equipes de n participantes e n rodadas. 
+
+Em cada rodada, cada um dos participantes participa de um duelo com outro da equipe adversária.
+
+Um duelo consiste no seguinte: Cada um dos duelistas escolhe uma carta de uma caixa, essa carta possui um valor numérico qualquer. Depois de escolhida a carta, os duelistas comparam os valores e verificam quem vence o round.
+
+O jogador pontua para sua equipe se a quantidade de divisores do valor igual a soma dos dígitos do número da carta for par.
+
+Fazendo essa operação para os n duelos, calcula-se a pontuação final da equipe. No entanto, se a soma dos dígitos da pontuação de alguma equipe for um primo par, a equipe perde 4 pontos, e se for um primo ímpar, a equipe ganha 3 pontos.  A pontuação de uma equipe pode ser negativa.
+
+Se a pontuação no final de tudo for igual, é somado 1 ponto para uma das equipes.
+
+Sabendo das regras, responda quem ganhou.
+
+Formato de entrada
+
+N -> Número de rounds
+
+Cada uma das N linhas:
+
+A -> Valor da carta do jogador de uma equipe
+
+B -> Valor da carta do jogador da outra equipe
+
+
+Formato de saída
+
+Na primeira linha:  "Quem ganhou foi aquele time."
+
+Na segunda linha a diferença de pontos entre as equipes.
+
+Exemplos de:
+
+Entrada
+
+
+2
+32 65
+65 13
+
+Saída
+
+
+Quem ganhou foi aquele time.
+3
+
+Entrada
+
+
+1
+25 16
+
+Saída
+
+
+Quem ganhou foi aquele time.
+1

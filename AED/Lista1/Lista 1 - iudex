@@ -1,0 +1,519 @@
+Lista 1 - iudex
+Uma linha de montagem recebe diferentes itens para serem processados. Cada item tem um identificador único X (inteiro sequencial 0,1,2...) e um tempo de processamento T (inteiro positivo), que corresponde ao tempo de trabalho sobre esse item necessário para que ele esteja completamente pronto. Novos itens (X, T) (identificador, tempo de processamento) são trazidos à linha por um carregador L e admitidos numa fila de entrada I (FIFO). Os itens são então progressivamente adicionados por um escalonador S a uma fila de trabalho circular W para serem processados por um processador P. Após serem completamente processados, os itens são retirados da fila circular de trabalho pelo escalonador e colocados numa pilha de saída O (LIFO), de onde são finalmente retirados por um descarregador U.
+
+O layout da linha de montagem está ilustrado a seguir. Repare que o Processador P e o Escalonador S têm acesso a posições consecutivas da fila circular (que, no diagrama, "roda" no sentido anti-horário). O ponto de acesso do escalonador vem imediatamente após (no sentido da fila) ao ponto de acesso do processador.
+
+                                                                    Processor
+                                                                 +-------------+           
+                                                                 |      P      |
+  Loader                                        Scheduler        +------------ +
++----------+                                    +-------+               |
+|    L     |      I: Input Queue (FIFO):        |   S   |               v          
+|          | ---> (X15, T15)   (X14, T14) -----------.  |            (X8, T8)  .  (X9, T9)       
++----------+                                    |    '-------.      .                     .
+                                                |       |      (X7, T7)                  (X10, T10)    
++----------+       O: Ouput Stack (LIFO):       |    .-------'   .         W: Circular         .
+|          | <---------------.  .--------------------'  |       .          Work Queue           .     
+|    U     |                 |  |               |       |        .           (CCW)             .  
++----------+                 |  v               +-------+       (X6, T6)                 (X11, T11)     
+ Unloader                    (X4)                                   .                       . 
+                             (X1)                                    (X13, T13) .  (X12, T12)
+                             (X5)
+                             (X2)  
+                             
+O trabalho da linha ocorre de forma sincronizada em ciclos de processamento de K unidades de tempo. A cada ciclo, os seguintes eventos ocorrem, nesta ordem:
+
+
+1 -    O escalonador verifica se o item na sua posição de acesso está totalmente processado, ou seja, se o seu tempo restante de processamento é zero (ver item 3 abaixo). Em caso positivo, ele é retirado da fila circular de trabalho W e colocado na pilha de saída O.
+2 -    O escalonador verifica se algum novo item está presente na fila de entrada I. Em caso positivo, ele retira um item da frente da fila I e o insere na fila de trabalho W na posição de acesso. O seja, esse novo item ocupará a posição imediatamente após a posição do processador (no sentido de W)
+3 -    O processador trabalha por K unidades de tempo no item (X,T) da sua posição, após o que o tempo restante de processamento T é decrescido de K unidades (limitado a zero). Em seguida, a fila circular "avança" uma posição.
+
+Para exemplificar, suponha que T7=0 no diagrama acima (o item X7 está totalmente processado). Após a execução de um ciclo, teríamos a seguinte situação:
+
+                                                                    Processor
+                                                                 +-------------+           
+                                                                 |      P      |
+  Loader                                        Scheduler        +------------ +
++----------+                                    +-------+               |
+|    L     |      I: Input Queue (FIFO):        |   S   |               v          
+|          | --->              (X15, T15) -----------.  |            (X9, T9)  .  (X10, T10)       
++----------+                                    |    '-------.      .                     .
+                                                |       |      (X8, T8'=T8-K)             (X11, T11)    
++----------+       O: Ouput Stack (LIFO):       |    .-------'   .           W: Circular       .
+|          | <---------------.  .--------------------'  |       .             Work Queue         .     
+|    U     |                 |  |               |       |        .              (CCW)           .  
++----------+                 |  v               +-------+       (X14, T14)                 (X12, T12)     
+ Unloader                    (X7)                                   .                       . 
+                             (X4)                                     (X6, T6) .  (X13, T13)
+                             (X1)
+                             (X5)  
+                             (X2)
+                             
+Entre dois ciclos sucessivos, novos itens podem ser carregados em I assim como itens podem ser descarregados da pilha O.
+
+IMPORTANTE:
+
+Caso não haja nada na fila de trabalho, o processador não realiza tarefa alguma. Caso haja apenas um item, esse item é processado por P e o avanço da fila circular W colocará esse item novamente na posição de processamento. Assim, por exemplo, no início, no ciclo em que o primeiro item é colocado em W (passo 2), nesse mesmo ciclo ele é processado por K unidades de tempo (passo 3). No início do próximo ciclo, apenas esse item estará em W. Logo, no passo 1 o escalonador verificará se ele deve ser retirado. Caso negativo, ele será novamente o item processado pois, ainda que um novo item seja inserido em W, seria "atrás" desse item.
+
+Input:
+
+A entrada inicia com uma linha contendo um inteiro
+
+K
+
+correspondente à duração de um ciclo de processamento. Em seguida, temos várias linhas numa das formas a seguir, cada uma correspondendo a um evento:
+
+    LOAD X T : indica que um novo item com identificador X e tempo restante de processamento T foi carregado na fila de entrada (inicialmente vazia)
+    UNLD : indica que um item foi descarregado da pilha de saída O
+    PROC : indica a ocorrência de um ciclo de processamento (passos 1-3 descritos acima)
+
+A entrada termina com uma linha
+
+END
+
+Output:
+
+Para cada linha UNLD da entrada, o programa deve imprimir uma linha
+
+UNLD X
+
+onde X é o identificador do item descarregado da pilha de saída O.
+
+Para cada linha PROC, o programa deve imprimir uma linha
+
+PROC X T
+
+onde X é o identificador do item processado nesse ciclo, e T indica o tempo restante de processamento do item ao final desse ciclo (após o passo 3). Caso a fila de trabalho esteja vazia, deve ser impresso PROC -1 -1.
+
+EXEMPLO 1:
+
+Input:
+2
+LOAD 0 6
+LOAD 1 15
+PROC
+LOAD 2 12
+PROC
+LOAD 3 12
+LOAD 4 11
+LOAD 5 8
+PROC
+LOAD 6 3
+PROC
+LOAD 7 7
+LOAD 8 5
+PROC
+UNLD
+LOAD 9 13
+PROC
+LOAD 10 3
+LOAD 11 3
+PROC
+LOAD 12 10
+LOAD 13 8
+PROC
+LOAD 14 12
+PROC
+LOAD 15 8
+LOAD 16 19
+PROC
+LOAD 17 8
+PROC
+LOAD 18 5
+LOAD 19 4
+PROC
+LOAD 20 9
+PROC
+LOAD 21 18
+PROC
+LOAD 22 4
+LOAD 23 18
+PROC
+LOAD 24 9
+PROC
+LOAD 25 2
+LOAD 26 10
+PROC
+LOAD 27 9
+PROC
+LOAD 28 13
+LOAD 29 12
+PROC
+LOAD 30 16
+LOAD 31 12
+PROC
+PROC
+PROC
+PROC
+PROC
+UNLD
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+UNLD
+PROC
+PROC
+PROC
+PROC
+UNLD
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+UNLD
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+UNLD
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+UNLD
+PROC
+UNLD
+PROC
+PROC
+PROC
+PROC
+UNLD
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+UNLD
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+UNLD
+PROC
+PROC
+PROC
+UNLD
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+UNLD
+PROC
+UNLD
+PROC
+PROC
+PROC
+PROC
+PROC
+UNLD
+PROC
+PROC
+UNLD
+PROC
+PROC
+PROC
+PROC
+UNLD
+PROC
+PROC
+PROC
+UNLD
+PROC
+PROC
+PROC
+UNLD
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+UNLD
+PROC
+PROC
+PROC
+UNLD
+PROC
+UNLD
+PROC
+UNLD
+PROC
+UNLD
+PROC
+PROC
+PROC
+PROC
+PROC
+PROC
+UNLD
+PROC
+PROC
+PROC
+PROC
+UNLD
+PROC
+PROC
+UNLD
+PROC
+PROC
+PROC
+PROC
+UNLD
+PROC
+PROC
+PROC
+PROC
+PROC
+UNLD
+PROC
+PROC
+UNLD
+PROC
+UNLD
+PROC
+UNLD
+END
+
+Output:
+PROC 0 4
+PROC 0 2
+PROC 1 13
+PROC 0 0
+PROC 2 10
+UNLD 0
+PROC 1 11
+PROC 3 10
+PROC 4 9
+PROC 2 8
+PROC 5 6
+PROC 1 9
+PROC 6 1
+PROC 3 8
+PROC 7 5
+PROC 4 7
+PROC 8 3
+PROC 2 6
+PROC 9 11
+PROC 5 4
+PROC 10 1
+PROC 1 7
+PROC 11 1
+PROC 6 0
+PROC 12 8
+UNLD 6
+PROC 3 6
+PROC 13 6
+PROC 7 3
+PROC 14 10
+PROC 4 5
+PROC 15 6
+PROC 8 1
+PROC 16 17
+PROC 2 4
+PROC 17 6
+PROC 9 9
+PROC 18 3
+PROC 5 2
+PROC 19 2
+PROC 10 0
+PROC 20 7
+UNLD 10
+PROC 1 5
+PROC 21 16
+PROC 11 0
+PROC 22 2
+UNLD 11
+PROC 23 16
+PROC 12 6
+PROC 24 7
+PROC 3 4
+PROC 25 0
+PROC 13 4
+UNLD 25
+PROC 26 8
+PROC 7 1
+PROC 27 7
+PROC 14 8
+PROC 28 11
+PROC 4 3
+PROC 29 10
+PROC 15 4
+PROC 30 14
+PROC 8 0
+PROC 31 10
+UNLD 8
+PROC 16 15
+PROC 2 2
+PROC 17 4
+PROC 9 7
+PROC 18 1
+PROC 5 0
+PROC 19 0
+UNLD 5
+PROC 20 5
+UNLD 19
+PROC 1 3
+PROC 21 14
+PROC 22 0
+PROC 23 14
+UNLD 22
+PROC 12 4
+PROC 24 5
+PROC 3 2
+PROC 13 2
+PROC 26 6
+PROC 7 0
+PROC 27 5
+UNLD 7
+PROC 14 6
+PROC 28 9
+PROC 4 1
+PROC 29 8
+PROC 15 2
+PROC 30 12
+PROC 31 8
+PROC 16 13
+PROC 2 0
+PROC 17 2
+UNLD 2
+PROC 9 5
+PROC 18 0
+PROC 20 3
+UNLD 18
+PROC 1 1
+PROC 21 12
+PROC 23 12
+PROC 12 2
+PROC 24 3
+PROC 3 0
+PROC 13 0
+UNLD 3
+PROC 26 4
+UNLD 13
+PROC 27 3
+PROC 14 4
+PROC 28 7
+PROC 4 0
+PROC 29 6
+UNLD 4
+PROC 15 0
+PROC 30 10
+UNLD 15
+PROC 31 6
+PROC 16 11
+PROC 17 0
+PROC 9 3
+UNLD 17
+PROC 20 1
+PROC 1 0
+PROC 21 10
+UNLD 1
+PROC 23 10
+PROC 12 0
+PROC 24 1
+UNLD 12
+PROC 26 2
+PROC 27 1
+PROC 14 2
+PROC 28 5
+PROC 29 4
+PROC 30 8
+PROC 31 4
+PROC 16 9
+PROC 9 1
+PROC 20 0
+PROC 21 8
+UNLD 20
+PROC 23 8
+PROC 24 0
+PROC 26 0
+UNLD 24
+PROC 27 0
+UNLD 26
+PROC 14 0
+UNLD 27
+PROC 28 3
+UNLD 14
+PROC 29 2
+PROC 30 6
+PROC 31 2
+PROC 16 7
+PROC 9 0
+PROC 21 6
+UNLD 9
+PROC 23 6
+PROC 28 1
+PROC 29 0
+PROC 30 4
+UNLD 29
+PROC 31 0
+PROC 16 5
+UNLD 31
+PROC 21 4
+PROC 23 4
+PROC 28 0
+PROC 30 2
+UNLD 28
+PROC 16 3
+PROC 21 2
+PROC 23 2
+PROC 30 0
+PROC 16 1
+UNLD 30
+PROC 21 0
+PROC 23 0
+UNLD 21
+PROC 16 0
+UNLD 23
+PROC -1 -1
+UNLD 16
+
+
+
+
+
+
+
+
+
