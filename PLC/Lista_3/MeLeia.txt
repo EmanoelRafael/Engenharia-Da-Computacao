@@ -1,0 +1,4 @@
+Aluno: Emanoel Rafael (ermfs)
+
+Fiz os comentários somente uma vez em cada método, ou seja, para questões que utilizam classes 
+e métodos de outras questões fiz o comentário somente nos métodos e classes novas ou que foram modificadas.

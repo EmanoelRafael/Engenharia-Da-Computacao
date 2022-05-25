@@ -1,0 +1,14 @@
+- 1 Pratos Completos
+11 - Parmegiana => 40.30
+12 - Bife a cavalo => 12.80
+13 - Macarronada => 23.99
+14 - Lasanha => 14.33
+- 2 Bebidas
+21 - Coca Cola (Lata) => 10.00
+22 - Antartica (Lata) => 31.12
+23 - Suco (Copo) => 11.14
+24 - Suco (Jarra) => 23.87
+- 3 Salgados
+31 - Coxinha => 5.44
+32 - Enroladinho => 4.55
+33 - Torta Salgada => 4.39
